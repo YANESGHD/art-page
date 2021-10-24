@@ -1,0 +1,103 @@
+{
+  "products": [
+    {
+      "name": "Red Bench",
+      "category": "people",
+      "price": 3.89,
+      "currency": "USD",
+      "image": {
+        "src": "https://images.pexels.com/photos/65958/bench-red-sky-blue-65958.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        "alt": ""
+      },
+      "bestseller": true,
+      "featured": false,
+      "details": null
+    },
+    {
+      "name": "Egg Balloon",
+      "category": "people",
+      "price": 93.89,
+      "currency": "USD",
+      "image": {
+        "src": "https://images.pexels.com/photos/9958944/pexels-photo-9958944.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        "alt": ""
+      },
+      "bestseller": true,
+      "featured": false,
+      "details": null
+    },
+    {
+      "name": "Man",
+      "category": "people",
+      "price": 100,
+      "currency": "USD",
+      "image": {
+        "src": "https://images.pexels.com/photos/9794899/pexels-photo-9794899.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        "alt": ""
+      },
+      "bestseller": false,
+      "featured": false,
+      "details": null
+    },
+    {
+      "name": "Woman",
+      "category": "people",
+      "price": 100,
+      "currency": "USD",
+      "image": {
+        "src": "https://images.pexels.com/photos/9640282/pexels-photo-9640282.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        "alt": ""
+      },
+      "bestseller": false,
+      "featured": false,
+      "details": null
+    },
+    {
+      "name": "Architecture",
+      "category": "landmarks",
+      "price": 101,
+      "currency": "USD",
+      "image": {
+        "src": "https://images.pexels.com/photos/3757136/pexels-photo-3757136.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        "alt": ""
+      },
+      "bestseller": true,
+      "featured": false,
+      "details": null
+    },
+    {
+      "name": "Samurai King Restling",
+      "category": "landmarks",
+      "price": 101,
+      "currency": "USD",
+      "image": {
+        "src": "https://images.pexels.com/photos/3726314/pexels-photo-3726314.jpeg?cs=srgb&dl=pexels-julissa-helmuth-3726314.jpg&fm=jpg",
+        "alt": ""
+      },
+      "bestseller": false,
+      "featured": true,
+      "details": {
+        "dimensions": {
+          "width": 1020,
+          "height": 1020
+        },
+        "size": 15000,
+        "description": "So how did the classical Latin become so incoherent? According to McClintock, a 15th century typesetter likely",
+        "recommendations": [
+          {
+            "src": "",
+            "alt": ""
+          },
+          {
+            "src": "",
+            "alt": ""
+          },
+          {
+            "src": "",
+            "alt": ""
+          }
+        ]
+      }
+    }
+  ]
+}
