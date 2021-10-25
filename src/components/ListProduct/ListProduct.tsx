@@ -7,6 +7,7 @@ import { Grid } from "@mui/material";
 type ListProductProps = {
   products: Product[];
 };
+type FilterPrice = { min: number; max: number };
 
 const INFINITE_NUMBER = 999999999;
 
@@ -21,15 +22,19 @@ const categoriesType = [
 ];
 
 const filterType = [
-  { key: "f1", name: "Lower than $20", value: 20 },
-  { key: "f2", name: "$20 - $100", value: 100 },
-  { key: "f3", name: "$100 - $200", value: 200 },
-  { key: "f4", name: "More than $200", value: INFINITE_NUMBER },
+  { key: "f1", name: "Lower than $20", value: { min: 0, max: 20 } },
+  { key: "f2", name: "$20 - $100", value: { min: 20, max: 100 } },
+  { key: "f3", name: "$100 - $200", value: { min: 100, max: 200 } },
+  {
+    key: "f4",
+    name: "More than $200",
+    value: { min: 200, max: INFINITE_NUMBER },
+  },
 ];
 
 export const ListProduct: FC<ListProductProps> = ({ products }) => {
   const [categoriesSelected, setCategoriesSelected] = useState<string[]>([]);
-  const [filterSelected, setFilterSelected] = useState<number[]>([]);
+  const [filterSelected, setFilterSelected] = useState<FilterPrice[]>([]);
   const [filterProduct, setFilterProduct] = useState<Product[]>(products);
 
   const handleCategory = (value: string) => {
@@ -40,7 +45,7 @@ export const ListProduct: FC<ListProductProps> = ({ products }) => {
     }
   };
 
-  const handleFilter = (value: number) => {
+  const handleFilter = (value: FilterPrice) => {
     if (filterSelected.includes(value)) {
       setFilterSelected(filterSelected.filter((v) => v !== value));
     } else {
@@ -48,42 +53,37 @@ export const ListProduct: FC<ListProductProps> = ({ products }) => {
     }
   };
 
-  useEffect(() => {
-    console.log(
-      "🚀 ~ file: ListProduct.tsx ~ line 70 ~ categoriesSelected, filterSelected",
-      categoriesSelected,
-      filterSelected
-    );
+  // useEffect(() => {
+  //   let filteredProducts = products;
 
-    let filteredProducts = products;
+  //   if (categoriesSelected.length !== 0) {
+  //     console.log("going to filter by category");
+  //     const newProducts = filteredProducts.filter((product) => {
+  //       return categoriesSelected.includes(product.category);
+  //     });
+  //     filteredProducts = newProducts;
+  //   } else filteredProducts = products;
 
-    if (categoriesSelected.length !== 0) {
-      console.log("going to filter by category");
-      const newProducts = filteredProducts.filter((product) => {
-        return categoriesSelected.includes(product.category);
-      });
-      filteredProducts = newProducts;
-    } else filteredProducts = products;
+  //   if (filterSelected.length !== 0) {
+  //     console.log("going to filter by price");
+  //     // TODO: selecciona el menor y el mayor rango de la lista de objetos de filterSelected
+  //     const maxPrice = Math.max(...filterSelected);
+  //     console.log(
+  //       "🚀 ~ file: ListProduct.tsx ~ line 71 ~ useEffect ~ maxPrice",
+  //       maxPrice
+  //     );
+  //     const newProducts = filteredProducts.filter((product) => {
+  //       return product.price <= maxPrice;
+  //     });
+  //     console.log(
+  //       "🚀 ~ file: ListProduct.tsx ~ line 75 ~ newProducts ~ newProducts",
+  //       newProducts
+  //     );
+  //     filteredProducts = newProducts;
+  //   }
 
-    if (filterSelected.length !== 0) {
-      console.log("going to filter by price");
-      const maxPrice = Math.max(...filterSelected);
-      console.log(
-        "🚀 ~ file: ListProduct.tsx ~ line 71 ~ useEffect ~ maxPrice",
-        maxPrice
-      );
-      const newProducts = filteredProducts.filter((product) => {
-        return product.price <= maxPrice;
-      });
-      console.log(
-        "🚀 ~ file: ListProduct.tsx ~ line 75 ~ newProducts ~ newProducts",
-        newProducts
-      );
-      filteredProducts = newProducts;
-    }
-
-    setFilterProduct(filteredProducts);
-  }, [categoriesSelected, filterSelected]);
+  //   setFilterProduct(filteredProducts);
+  // }, [categoriesSelected, filterSelected]);
 
   // useEffect(() => {
   //   if (categoriesSelected.length === 0) {
@@ -125,7 +125,6 @@ export const ListProduct: FC<ListProductProps> = ({ products }) => {
                 <input
                   type="checkbox"
                   id={category.key}
-                  value={category.value}
                   onClick={() => handleCategory(category.value)}
                 />{" "}
                 <label>{category.name}</label>
@@ -139,7 +138,6 @@ export const ListProduct: FC<ListProductProps> = ({ products }) => {
                 <input
                   type="checkbox"
                   id={filter.key}
-                  value={filter.value}
                   onClick={() => handleFilter(filter.value)}
                 />{" "}
                 <label>{filter.name}</label>
