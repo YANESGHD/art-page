@@ -4,14 +4,14 @@ import styled from "@emotion/styled";
 
 const App = () => {
   return (
-    <Container>
+    <Layout>
       <Landing />
-    </Container>
+    </Layout>
   );
 };
 
-const Container = styled.div`
-  margin: 10px;
+const Layout = styled.div`
+  padding: 50px 100px;
   font-family: Archivo;
 `;
 

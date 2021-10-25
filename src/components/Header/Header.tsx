@@ -18,7 +18,7 @@ const Container = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
   border-bottom: 4px solid #E4E4E4;
 `;
 

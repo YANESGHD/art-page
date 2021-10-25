@@ -22,17 +22,23 @@ export const Landing: FC<LandingProps> = () => {
 
   if (!products) return <div>Loading...</div>;
 
-  const getFeaturedProducts = (products: Product[]): Product =>
+  const getFeaturedProducts = (): Product =>
     products.filter((product) => product.featured)[0];
 
-  const getNonFeaturedProducts = (products: Product[]): Product[] =>
+  const getOtherProducts = (): Product[] =>
+    products.filter((product) => !product.featured).slice(0, 3);
+
+  const getNonFeaturedProducts = (): Product[] =>
     products.filter((product) => !product.featured);
 
   return (
     <div>
       <Header />
-      <FeaturedProduct productFeature={getFeaturedProducts(products)} />
-      <ListProduct productsList={getNonFeaturedProducts(products)} />
+      <FeaturedProduct
+        product={getFeaturedProducts()}
+        otherProducts={getOtherProducts()}
+      />
+      <ListProduct products={getNonFeaturedProducts()} />
     </div>
   );
 };

@@ -40,6 +40,45 @@
       "details": null
     },
     {
+      "name": "Red Bench",
+      "category": "people",
+      "price": 3.89,
+      "currency": "USD",
+      "image": {
+        "src": "https://images.pexels.com/photos/65958/bench-red-sky-blue-65958.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        "alt": ""
+      },
+      "bestseller": true,
+      "featured": false,
+      "details": null
+    },
+    {
+      "name": "Egg Balloon",
+      "category": "people",
+      "price": 93.89,
+      "currency": "USD",
+      "image": {
+        "src": "https://images.pexels.com/photos/9958944/pexels-photo-9958944.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        "alt": ""
+      },
+      "bestseller": true,
+      "featured": false,
+      "details": null
+    },
+    {
+      "name": "Man",
+      "category": "people",
+      "price": 100,
+      "currency": "USD",
+      "image": {
+        "src": "https://images.pexels.com/photos/9794899/pexels-photo-9794899.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        "alt": ""
+      },
+      "bestseller": false,
+      "featured": false,
+      "details": null
+    },
+    {
       "name": "Woman",
       "category": "people",
       "price": 100,
@@ -71,7 +110,7 @@
       "price": 101,
       "currency": "USD",
       "image": {
-        "src": "https://images.pexels.com/photos/3726314/pexels-photo-3726314.jpeg?cs=srgb&dl=pexels-julissa-helmuth-3726314.jpg&fm=jpg",
+        "src": "https://images.unsplash.com/photo-1616666720306-c1067db00277?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
         "alt": ""
       },
       "bestseller": false,
@@ -82,7 +121,7 @@
           "height": 1020
         },
         "size": 15000,
-        "description": "So how did the classical Latin become so incoherent? According to McClintock, a 15th century typesetter likely",
+        "description": "So how did the classical Latin become so incoherent? According to McClintock, a 15th century typesetter likely scrambled part of Cicero's De Finibus in order to provide placeholder text to mockup various fonts for a type specimen book.So how did the classical Latin become so incoherent? According to McClintock, a 15th century typesetter likely scrambled part of Cicero's De Finibus in order to provide placeholder text to mockup various fonts for a type specimen book.So how did the classical Latin become so incoherent? According to McClintock.",
         "recommendations": [
           {
             "src": "",
