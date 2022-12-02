@@ -2,19 +2,28 @@ import { FC } from 'react';
 import styled from '@emotion/styled';
 import { Product } from '../../types';
 import { Button } from '@mui/material';
+import { useShoppingCart } from '../../contexts';
 
 type TitleProps = {
   product: Product;
 };
 
 export const Title: FC<TitleProps> = ({ product }) => {
-  const handleAddCart = () => { };
+  const { handleItemUpdate } = useShoppingCart();
+
+  const handleAddItem = () => {
+    handleItemUpdate({
+      name: product.name,
+      price: product.price,
+      quantityRequested: 1,
+    });
+  };
 
   return (
     <>
       <Container>
         <Text>{product.name}</Text>
-        <StyledButton onClick={() => handleAddCart()}>ADD TO CART</StyledButton>
+        <StyledButton onClick={() => handleAddItem()}>ADD TO CART</StyledButton>
       </Container>
       <Image src={product.image.src} />
     </>

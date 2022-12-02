@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import styled from '@emotion/styled';
 import { MenuItem } from '@mui/material';
-import { useShoppingCart } from '../../contexts/useShoppingCart';
+import { useShoppingCart } from '../../contexts';
 
 export const ShoppingCartItems: FC = () => { 
   const { cartItems } = useShoppingCart();
@@ -14,6 +14,7 @@ export const ShoppingCartItems: FC = () => {
           <Text>Cantidad: {value.quantityRequested}</Text>
         </StyledMenuItem>
       ))}
+
       {Object.entries(cartItems).length === 0 && (
         <StyledMenuItem>
           <Text>El carrito de compras está vacío</Text>

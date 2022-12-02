@@ -21,7 +21,7 @@ interface ShoppingCartContextInterface {
 
 export const ShoppingCartContext = createContext<ShoppingCartContextInterface>({
   cartItems: {},
-  handleItemUpdate: () => { },
+  handleItemUpdate: () => {},
 });
 
 export const ShoppingCartContextWrapper: FC<ShoppingCartProviderProps> = ({ children }) => {
