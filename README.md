@@ -15,6 +15,11 @@
 - API Fetch: fetch
 
 ## How to execute my app
+Copy .env.template content to a new .env file 
+
+`yarn install`
+
+`yarn start`
 
 
 ## Scripts
