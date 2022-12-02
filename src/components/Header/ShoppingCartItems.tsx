@@ -1,18 +1,22 @@
 import { FC } from 'react';
 import styled from '@emotion/styled';
-import { MenuItem } from '@mui/material';
+import { MenuItem, Divider } from '@mui/material';
 import { useShoppingCart } from '../../contexts';
 
-export const ShoppingCartItems: FC = () => { 
+export const ShoppingCartItems: FC = () => {
   const { cartItems } = useShoppingCart();
 
   return (
     <Container>
       {Object.entries(cartItems)?.map(([name, value]) => (
-        <StyledMenuItem>
-          <Text>Item: {name}</Text>
-          <Text>Cantidad: {value.quantityRequested}</Text>
-        </StyledMenuItem>
+        <>
+          <StyledMenuItem>
+            <Text>Item: {name}</Text>
+            <Text>Cantidad: {value.quantityRequested}</Text>
+          </StyledMenuItem>
+
+          <Divider sx={{ border: '1px solid #e4e4e4', width: '300px' }} />
+        </>
       ))}
 
       {Object.entries(cartItems).length === 0 && (
@@ -40,4 +44,5 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 `;
