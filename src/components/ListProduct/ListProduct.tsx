@@ -7,6 +7,7 @@ import { Grid } from "@mui/material";
 type ListProductProps = {
   products: Product[];
 };
+
 type FilterPrice = { min: number; max: number };
 
 const INFINITE_NUMBER = 999999999;

@@ -1,7 +1,7 @@
-import { FC } from "react";
-import { Product } from "../../types";
-import styled from "@emotion/styled";
-import { Grid } from "@mui/material";
+import { FC } from 'react';
+import { Grid, Button } from '@mui/material';
+import { Product } from '../../types';
+import styled from '@emotion/styled';
 
 type FeaturedProductProps = {
   product: Product;
@@ -12,21 +12,19 @@ export const FeaturedProduct: FC<FeaturedProductProps> = ({
   product,
   otherProducts,
 }) => {
+
   const handleAddCart = () => {};
 
   // TODO: Complete this
   const productsImages = otherProducts.map((product) => product.image);
-  console.log(
-    "🚀 ~ file: FeaturedProduct.tsx ~ line 15 ~ productsImages",
-    productsImages
-  );
+
   return (
     <Container>
       <Grid container spacing={1}>
         <Grid item xs={12}>
           <TitleContainer>
             <Title>{product.name}</Title>
-            <Button onClick={() => handleAddCart()}>ADD TO CART</Button>
+            <StyledButton onClick={() => handleAddCart()}>ADD TO CART</StyledButton>
           </TitleContainer>
           <Image src={product.image.src} />
         </Grid>
@@ -44,7 +42,7 @@ export const FeaturedProduct: FC<FeaturedProductProps> = ({
             <h2>People also buy</h2>
             <h2>Details</h2>
             <div>
-              Size: {product.details.dimensions.width} x{" "}
+              Size: {product.details.dimensions.width} x{' '}
               {product.details.dimensions.height} pixel
             </div>
             <div>Size: {product.details.size / 1000} mb</div>
@@ -90,6 +88,7 @@ const TitleContainer = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  padding-bottom: 20px;
 `;
 
 const Image = styled.img`
@@ -97,17 +96,10 @@ const Image = styled.img`
   height: 500px;
 `;
 
-const Button = styled.button`
-  width: 200px;
+const StyledButton = styled(Button)`
+  width: 150px;
   height: 40px;
-  left: 1115px;
-  top: 182px;
-  background: #000000;
-  color: #ffffff;
-  font-style: normal;
-  font-weight: 540;
+  background-color: black !important;
+  color: white;
   font-size: 16px;
-  line-height: 25px;
-  letter-spacing: 0.07em;
-  cursor: pointer;
 `;

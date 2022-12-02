@@ -1,17 +1,26 @@
-import { FC } from "react";
-import styled from "@emotion/styled";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { FC } from 'react';
+import { ShoppingCart } from '@mui/icons-material';
+import { IconButton } from '@mui/material';
+import styled from '@emotion/styled';
 
 type HeaderProps = {};
 
 export const Header: FC<HeaderProps> = () => {
   return (
     <Container>
-      <Image src="/images/logo.png" alt="Logo" />
-      <ShoppingCartIcon fontSize="large" />
+      <Title>{"<YANESGAB />"}</Title>
+
+      <IconButton>
+        <ShoppingCart sx={{ fontSize: 40, color: 'black' }}/>
+      </IconButton>
     </Container>
   );
 };
+
+const Title = styled.h2`
+  font-size: 24px;
+  letter-spacing: 0.2em;
+`;
 
 const Container = styled.div`
   display: flex;
@@ -21,7 +30,3 @@ const Container = styled.div`
   padding-bottom: 20px;
   border-bottom: 4px solid #E4E4E4;
 `;
-
-const Image = styled.img`
-  width: 150px;
-`
