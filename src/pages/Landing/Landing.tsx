@@ -1,6 +1,6 @@
-import { FC, useEffect, useState } from "react";
-import { FeaturedProduct, Header, ListProduct } from "../../components";
-import { Product } from "../../types";
+import { FC, useEffect, useState } from 'react';
+import { FeaturedProduct, Header, ListProduct } from '../../components';
+import { Product } from '../../types';
 
 type LandingProps = {};
 
@@ -32,13 +32,13 @@ export const Landing: FC<LandingProps> = () => {
     products.filter((product) => !product.featured);
 
   return (
-    <div>
+    <>
       <Header />
       <FeaturedProduct
         product={getFeaturedProducts()}
         otherProducts={getOtherProducts()}
       />
       <ListProduct products={getNonFeaturedProducts()} />
-    </div>
+    </>
   );
 };

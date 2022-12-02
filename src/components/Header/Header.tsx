@@ -1,18 +1,42 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { ShoppingCart } from '@mui/icons-material';
-import { IconButton } from '@mui/material';
+import { Menu, IconButton } from '@mui/material';
 import styled from '@emotion/styled';
+import { ShoppingCartItems } from './ShoppingCartItems';
 
 type HeaderProps = {};
 
 export const Header: FC<HeaderProps> = () => {
+  const [openMenu, setOpenMenu] = useState<null | HTMLElement>(null);
+
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+    setOpenMenu(event.currentTarget);
+  };
+
   return (
     <Container>
       <Title>{"<YANESGAB />"}</Title>
 
-      <IconButton>
+      <IconButton onClick={handleClick}>
         <ShoppingCart sx={{ fontSize: 40, color: 'black' }}/>
       </IconButton>
+
+      <Menu
+        id='user-menu'
+        anchorEl={openMenu}
+        open={!!openMenu}
+        onClose={() => setOpenMenu(null)}
+        anchorOrigin={{
+          vertical: 'top',
+          horizontal: 'left',
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'left',
+        }}
+      >
+        <ShoppingCartItems />
+      </Menu>
     </Container>
   );
 };

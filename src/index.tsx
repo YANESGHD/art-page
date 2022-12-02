@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { App } from './components/App';
+import { ShoppingCartContextWrapper } from './contexts';
 
 if (process.env.NODE_ENV === 'development') {
   const { worker } = require('./mocks/browser');
@@ -9,7 +10,9 @@ if (process.env.NODE_ENV === 'development') {
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ShoppingCartContextWrapper>
+      <App />
+    </ShoppingCartContextWrapper>
   </React.StrictMode>,
   document.getElementById('root')
 );
